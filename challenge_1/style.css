@@ -3,7 +3,20 @@ html {
 	opacity: 0.6;
 }
 
+body {
+	text-align: center;
+}
+
 button {
-	font-size: 24px;
+	height: 200px;
+	width: 200px;
 	background-color: blue;
+	opacity: 0.6;
+
+}
+
+board-row {
+	height: 100px;
+	width: 100px;
+
 }
