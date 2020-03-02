@@ -11,8 +11,7 @@ var buttons = document.getElementsByClassName("button");
 //but with zero results. This is because I put the script section in the html above
 //the place where the button html elements are generated. PAY ATTENTION in future...
 
-//GAME
-//generate board
+
 
 
 for (const button of buttons) {
@@ -20,19 +19,43 @@ for (const button of buttons) {
 console.log(button);
   button.addEventListener('click', function(event) {
     console.log('click!');
-    button.innerHTML = 'X';
+
  	var position = button.id;
- 	if (position > 0 && position <= 3) {
+
+ 	//player1 logic
+ 	if (position > 0 && position <= 3 && player1 === true) {
  		board[0][position - 1] = 'X';
- 	} else if (position > 3 && position <= 6) {
+ 		button.innerHTML = 'X';
+ 	} else if (position > 3 && position <= 6 && player1 === true) {
  		board[1][position - 4] = 'X';
- 	} else if (position > 6 && position <= 9) {
+ 		button.innerHTML = 'X';
+ 	} else if (position > 6 && position <= 9 && player1 === true) {
  		board[2][position - 7] = 'X';
+ 		button.innerHTML = 'X';
  	}
+
+ 	//player2 logic
+ 	else if (position > 0 && position <= 3 && player1 === false) {
+ 		board[0][position - 1] = 'O';
+ 		button.innerHTML = 'O';
+ 	} else if (position > 3 && position <= 6 && player1 === false) {
+ 		board[1][position - 4] = 'O';
+ 		button.innerHTML = 'O';
+ 	} else if (position > 6 && position <= 9 && player1 === false) {
+ 		board[2][position - 7] = 'O';
+ 		button.innerHTML = 'O';
+ 	}
+
+ 	console.log(board);
   });
 
 };
 
+//GAME
+var gameover = false;
+var player1 = false;
+
+//generate board
 var board = [
 			[null, null, null],
 			[null, null, null],
@@ -40,12 +63,9 @@ var board = [
 			];
 
 //once a box is checked, cannot change
-
-//while there are moves left and no win..
+//while there is no win
 
 while (gameover = false) {
-var gameover = false;
-var player1 = true;
 //Player one marks an 'X'
 
 
