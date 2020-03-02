@@ -1,0 +1,9 @@
+html {
+	background: url(https://cdn2.iconfinder.com/data/icons/data-management-8/512/27_Cube_Jigsaw_Puzzle_Box-512.png) no-repeat center fixed;
+	opacity: 0.6;
+}
+
+button {
+	font-size: 24px;
+	background-color: blue;
+}
