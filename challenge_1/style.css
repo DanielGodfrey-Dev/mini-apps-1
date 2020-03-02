@@ -1,6 +1,5 @@
 html {
-	background: url(https://cdn2.iconfinder.com/data/icons/data-management-8/512/27_Cube_Jigsaw_Puzzle_Box-512.png) no-repeat center fixed;
-	opacity: 0.6;
+	opacity: 0.9;
 }
 
 body {
@@ -8,15 +7,17 @@ body {
 }
 
 button {
-	height: 200px;
-	width: 200px;
-	background-color: blue;
-	opacity: 0.6;
+	height: 150px;
+	width: 150px;
+	background-color: #4666FF;
+	opacity: 0.8;
+	border-color: black;
+	border-width: 9px;
+	margin-top: 10px;
+	margin-right: 5px;
 
 }
 
 board-row {
-	height: 100px;
-	width: 100px;
 
 }
