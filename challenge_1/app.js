@@ -20,3 +20,21 @@ console.log(button);
   });
 
 };
+
+//GAME
+
+//once a box is checked, cannot change
+
+//while there are moves left and no win..
+//Player one marks an 'X'
+	//check for win
+//Player two marks an 'O'
+	//check for win
+
+//Display (after game implementation)
+
+//Player 1 Box - potential X's remaining
+	//win? lose?
+//Player 2 Box - potential O's remaining
+	//win? lose?
+
