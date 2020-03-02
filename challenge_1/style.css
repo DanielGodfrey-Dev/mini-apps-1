@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
 html {
+	background: url(https://static.vecteezy.com/system/resources/previews/000/095/240/large_2x/abstract-bright-blue-geometric-shape-vector.jpg);
 	opacity: 0.9;
 	font-family: Tomorrow, sans-serif;
 }

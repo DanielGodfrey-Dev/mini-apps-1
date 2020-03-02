@@ -22,6 +22,14 @@ console.log(button);
 };
 
 //GAME
+//generate board
+var board = [
+			[null, null, null],
+			[null, null, null],
+			[null, null, null],
+			];
+
+			console.log(board);
 
 //once a box is checked, cannot change
 
