@@ -16,8 +16,9 @@ var buttons = document.getElementsByClassName("button");
 
 for (const button of buttons) {
 //iterates through buttons and signs event listener to each
-console.log(button);
-  button.addEventListener('click', function(event) {
+	console.log(button);
+
+	button.addEventListener('click', function(event) {
 
  	var position = button.id;
 
@@ -66,11 +67,9 @@ var board = [
 			];
 
 //gamewin check functions
-
 function checkRowWin() {
 	for (var i = 0; i < board.length; i++) {
 		if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && (board[i][0] === 'X' || board[i][0] === 'O')) {
-			console.log('scanning');
 			gameover = true;
 		}
 	}
@@ -78,7 +77,6 @@ function checkRowWin() {
 
 function checkDiagWin() {
 	if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null) {
-		console.log('scanning');
 		gameover = true;
 	}
 
@@ -87,9 +85,24 @@ function checkDiagWin() {
 	}
 }
 
+function checkVertWin() {
+	if (board[0][0] === board[1][0] && board[1][0] === board[2][0] && board[0][0] !== null) {
+		gameover = true;
+	}
+
+	if (board[0][1] === board[1][1] && board[1][1] === board[2][1] && board[0][1] !== null) {
+		gameover = true;
+	}
+
+	if (board[0][2] === board[1][2] && board[1][2] === board[2][2] && board[0][2] !== null) {
+		gameover = true;
+	}
+}
+
 function checkWin() {
 	checkRowWin();
 	checkDiagWin();
+	checkVertWin();
 }
 
 function playerSwitch() {
