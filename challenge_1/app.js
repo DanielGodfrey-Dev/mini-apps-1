@@ -5,6 +5,7 @@ console.log('game starting...');
 //identify all buttons
 var buttons = document.getElementsByClassName("button");
 var alreadyCalled = false;
+var drawCount = 0;
 
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
@@ -43,8 +44,10 @@ for (const button of buttons) {
 	 		button.innerHTML = 'O';
 	 	}
 
+	 	drawCount++;
 	 	playerSwitch();
 	 	checkWin();
+	 	checkDraw();
 	 }
 
 	 setTimeout(function() {
@@ -105,6 +108,21 @@ function checkWin() {
 	checkRowWin();
 	checkDiagWin();
 	checkVertWin();
+	setTimeout(function() {
+	  	if (gameover && !alreadyCalled) {
+	 		alert('Gameover man, it\'s game over!!');
+	 		alreadyCalled = true;
+	 	}
+	 }, 5);
+}
+
+function checkDraw() {
+	setTimeout(function() {
+	  	if (drawCount === 9 && !alreadyCalled) {
+	 		alert('It\'s a trap!! I mean, a draw!');
+	 		alreadyCalled = true;
+	 	}
+	 }, 6);
 }
 
 function playerSwitch() {
