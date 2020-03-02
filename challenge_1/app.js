@@ -4,6 +4,7 @@ console.log('game starting...');
 
 //identify all buttons
 var buttons = document.getElementsByClassName("button");
+var alreadyCalled = false;
 
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
@@ -46,8 +47,15 @@ for (const button of buttons) {
 
 	 	playerSwitch();
 	 	checkWin();
-
 	 }
+
+	 setTimeout(function() {
+	  	if (gameover && !alreadyCalled) {
+	 		alert('Gameover man, it\'s game over!!');
+	 		alreadyCalled = true;
+	 	}
+	 }, 100);
+	 //...so page can render properly before alert
   });
 };
 
