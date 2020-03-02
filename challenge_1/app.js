@@ -18,7 +18,6 @@ for (const button of buttons) {
 //iterates through buttons and signs event listener to each
 console.log(button);
   button.addEventListener('click', function(event) {
-    console.log('click!');
 
  	var position = button.id;
 
@@ -47,13 +46,14 @@ console.log(button);
  	}
 
  	console.log(board);
+ 	console.log(gameover);
   });
 
 };
 
 //GAME
 var gameover = false;
-var player1 = false;
+var player1 = true;
 
 //generate board
 var board = [
@@ -62,13 +62,36 @@ var board = [
 			[null, null, null],
 			];
 
+//gamewin check functions
+
+function checkRowWin() {
+	for (var i = 0; i < board.length; i++) {
+		if (board[i][0] === board[i][1] && board[i][1] === board[i][2]) {
+			gameover === true;
+		}
+	}
+}
+
+function checkDiagWin() {
+	if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+		gameover === true;
+	}
+
+	if (board[2][0] === board[1][1] && board[1][1] === board[0][2]) {
+		gameover === true;
+	}
+}
+
+function checkWin() {
+	checkRowWin();
+	checkDiagWin();
+}
+
 //once a box is checked, cannot change
 //while there is no win
 
 while (gameover = false) {
 //Player one marks an 'X'
-
-
 	//check for win
 //Player two marks an 'O'
 	//check for win
