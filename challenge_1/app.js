@@ -1,8 +1,6 @@
 
 
-console.log('we are here');
-
-//click handler for boxes (add X/ add O, etc.)
+console.log('game starting...');
 
 //identify all buttons
 var buttons = document.getElementsByClassName("button");
@@ -10,9 +8,6 @@ var buttons = document.getElementsByClassName("button");
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
 //the place where the button html elements are generated. PAY ATTENTION in future...
-
-
-
 
 for (const button of buttons) {
 //iterates through buttons and signs event listener to each
@@ -22,37 +17,38 @@ for (const button of buttons) {
 
  	var position = button.id;
 
- 	//player1 logic
- 	if (position > 0 && position <= 3 && player1 === true) {
- 		board[0][position - 1] = 'X';
- 		button.innerHTML = 'X';
- 	} else if (position > 3 && position <= 6 && player1 === true) {
- 		board[1][position - 4] = 'X';
- 		button.innerHTML = 'X';
- 	} else if (position > 6 && position <= 9 && player1 === true) {
- 		board[2][position - 7] = 'X';
- 		button.innerHTML = 'X';
- 	}
+ 	//this while statement ensures moves can't be changed
+ 	while (button.innerHTML !== 'X' && button.innerHTML !== 'O' && gameover === false) {
 
- 	//player2 logic
- 	else if (position > 0 && position <= 3 && player1 === false) {
- 		board[0][position - 1] = 'O';
- 		button.innerHTML = 'O';
- 	} else if (position > 3 && position <= 6 && player1 === false) {
- 		board[1][position - 4] = 'O';
- 		button.innerHTML = 'O';
- 	} else if (position > 6 && position <= 9 && player1 === false) {
- 		board[2][position - 7] = 'O';
- 		button.innerHTML = 'O';
- 	}
+	 	//player1 logic
+	 	if (position > 0 && position <= 3 && player1 === true) {
+	 		board[0][position - 1] = 'X';
+	 		button.innerHTML = 'X';
+	 	} else if (position > 3 && position <= 6 && player1 === true) {
+	 		board[1][position - 4] = 'X';
+	 		button.innerHTML = 'X';
+	 	} else if (position > 6 && position <= 9 && player1 === true) {
+	 		board[2][position - 7] = 'X';
+	 		button.innerHTML = 'X';
+	 	}
 
- 	playerSwitch();
- 	checkWin();
+	 	//player2 logic
+	 	else if (position > 0 && position <= 3 && player1 === false) {
+	 		board[0][position - 1] = 'O';
+	 		button.innerHTML = 'O';
+	 	} else if (position > 3 && position <= 6 && player1 === false) {
+	 		board[1][position - 4] = 'O';
+	 		button.innerHTML = 'O';
+	 	} else if (position > 6 && position <= 9 && player1 === false) {
+	 		board[2][position - 7] = 'O';
+	 		button.innerHTML = 'O';
+	 	}
 
- 	console.log(board);
- 	console.log(gameover);
+	 	playerSwitch();
+	 	checkWin();
+
+	 }
   });
-
 };
 
 //GAME
