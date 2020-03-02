@@ -10,6 +10,13 @@ html {
 body {
 	text-align: center;
 	color: #81F94E;
+	font-size: 36px;
+	line-height: 10px;
+}
+
+p {
+	font-size: 20px;
+	line-height: 40px;
 }
 
 button {

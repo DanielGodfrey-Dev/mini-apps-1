@@ -11,8 +11,6 @@ var alreadyCalled = false;
 //the place where the button html elements are generated. PAY ATTENTION in future...
 
 for (const button of buttons) {
-//iterates through buttons and signs event listener to each
-	console.log(button);
 
 	button.addEventListener('click', function(event) {
 
@@ -54,7 +52,7 @@ for (const button of buttons) {
 	 		alert('Gameover man, it\'s game over!!');
 	 		alreadyCalled = true;
 	 	}
-	 }, 100);
+	 }, 10);
 	 //...so page can render properly before alert
   });
 };
