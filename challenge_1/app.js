@@ -45,6 +45,9 @@ console.log(button);
  		button.innerHTML = 'O';
  	}
 
+ 	playerSwitch();
+ 	checkWin();
+
  	console.log(board);
  	console.log(gameover);
   });
@@ -66,19 +69,21 @@ var board = [
 
 function checkRowWin() {
 	for (var i = 0; i < board.length; i++) {
-		if (board[i][0] === board[i][1] && board[i][1] === board[i][2]) {
-			gameover === true;
+		if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && (board[i][0] === 'X' || board[i][0] === 'O')) {
+			console.log('scanning');
+			gameover = true;
 		}
 	}
 }
 
 function checkDiagWin() {
-	if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
-		gameover === true;
+	if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null) {
+		console.log('scanning');
+		gameover = true;
 	}
 
-	if (board[2][0] === board[1][1] && board[1][1] === board[0][2]) {
-		gameover === true;
+	if (board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[2][0] !== null) {
+		gameover = true;
 	}
 }
 
@@ -87,10 +92,14 @@ function checkWin() {
 	checkDiagWin();
 }
 
+function playerSwitch() {
+	player1 = !player1;
+}
+
 //once a box is checked, cannot change
 //while there is no win
 
-while (gameover = false) {
+
 //Player one marks an 'X'
 	//check for win
 //Player two marks an 'O'
@@ -103,5 +112,4 @@ while (gameover = false) {
 //Player 2 Box - potential O's remaining
 	//win? lose?
 
-}
 
