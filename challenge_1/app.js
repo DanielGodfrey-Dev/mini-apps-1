@@ -14,7 +14,6 @@ var player1wins = 0;
 var player2wins = 0;
 
 
-
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
 //the place where the button html elements are generated. PAY ATTENTION in future...
@@ -98,14 +97,29 @@ document.getElementById('newGame').addEventListener('click', function() {
 	alreadyCalled = false;
 	drawCount = 0;
 
+	console.log('player1wins: ', player1wins);
+	console.log('player2wins: ', player2wins);
+
+
 });
 
+function logWinner() {
+	if (player1 === false) {
+		player1wins++;
+	} if (player1 === true) {
+		player2wins++;
+	}
+}
 
 //gamewin check functions
 function checkRowWin() {
 	for (var i = 0; i < board.length; i++) {
 		if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && (board[i][0] === 'X' || board[i][0] === 'O')) {
 			gameover = true;
+
+	 		//log which player won
+	 		logWinner();
+
 		}
 	}
 }
@@ -114,6 +128,9 @@ function checkDiagWin() {
 	if ((board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null) ||
 		(board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[2][0] !== null)) {
 		gameover = true;
+
+	 		//log which player won
+	 		logWinner();
 	}
 }
 
@@ -123,6 +140,9 @@ function checkVertWin() {
 		(board[0][2] === board[1][2] && board[1][2] === board[2][2] && board[0][2] !== null)) {
 
 		gameover = true;
+
+	 		//log which player won
+	 		logWinner();
 	}
 }
 
@@ -133,8 +153,10 @@ function checkWin() {
 	checkVertWin();
 	setTimeout(function() {
 	  	if (gameover && !alreadyCalled) {
+
 	 		alert('Gameover man, it\'s game over!!');
 	 		alreadyCalled = true;
+
 	 	}
 	 }, 15);
 }
