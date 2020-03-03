@@ -6,6 +6,8 @@ console.log('game starting...');
 var buttons = document.getElementsByClassName("button");
 var alreadyCalled = false;
 var drawCount = 0;
+var player1wins = 0;
+var player2wins = 0;
 
 document.getElementById('newGame').addEventListener('click', function() {
 	window.location.reload();
@@ -85,28 +87,21 @@ function checkRowWin() {
 }
 
 function checkDiagWin() {
-	if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null) {
-		gameover = true;
-	}
-
-	if (board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[2][0] !== null) {
+	if ((board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null) ||
+		(board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[2][0] !== null)) {
 		gameover = true;
 	}
 }
 
 function checkVertWin() {
-	if (board[0][0] === board[1][0] && board[1][0] === board[2][0] && board[0][0] !== null) {
-		gameover = true;
-	}
+	if ((board[0][0] === board[1][0] && board[1][0] === board[2][0] && board[0][0] !== null) || 
+		(board[0][1] === board[1][1] && board[1][1] === board[2][1] && board[0][1] !== null) || 
+		(board[0][2] === board[1][2] && board[1][2] === board[2][2] && board[0][2] !== null)) {
 
-	if (board[0][1] === board[1][1] && board[1][1] === board[2][1] && board[0][1] !== null) {
-		gameover = true;
-	}
-
-	if (board[0][2] === board[1][2] && board[1][2] === board[2][2] && board[0][2] !== null) {
 		gameover = true;
 	}
 }
+
 
 function checkWin() {
 	checkRowWin();
