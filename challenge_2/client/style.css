@@ -1,0 +1,10 @@
+@import url(http://allfont.net/allfont.css?fonts=agency-fb);
+
+html {
+	background: url(https://www.insidesources.com/wp-content/uploads/2017/01/bigstock-Digital-Analytics-Concept-with-160332785.jpg) no-repeat center center fixed;
+	color: white;
+	font-family: agency-fb;
+	font-family: 'Agency FB', arial;
+        font-size: 16px;
+        text-shadow: 4px 4px 4px #aaa;
+}
