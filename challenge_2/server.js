@@ -4,6 +4,7 @@ const port = 3000
 const path = require('path');
 
 app.get('/', (req, res) => res.send('we are online'))
+app.post('/upload', (req, res) => res.send('we got something'))
 
 app.listen(port, () => console.log(`...I hear you on port ${port}...`))
 
