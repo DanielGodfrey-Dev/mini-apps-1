@@ -7,6 +7,10 @@ var buttons = document.getElementsByClassName("button");
 var alreadyCalled = false;
 var drawCount = 0;
 
+document.getElementById('newGame').addEventListener('click', function() {
+	window.location.reload();
+})
+
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
 //the place where the button html elements are generated. PAY ATTENTION in future...
@@ -113,7 +117,7 @@ function checkWin() {
 	 		alert('Gameover man, it\'s game over!!');
 	 		alreadyCalled = true;
 	 	}
-	 }, 5);
+	 }, 50);
 }
 
 function checkDraw() {
@@ -122,7 +126,7 @@ function checkDraw() {
 	 		alert('It\'s a trap!! I mean, a draw!');
 	 		alreadyCalled = true;
 	 	}
-	 }, 6);
+	 }, 60);
 }
 
 function playerSwitch() {
