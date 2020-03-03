@@ -2,16 +2,18 @@
 
 console.log('game starting...');
 
-//identify all buttons
+//identify all buttons to assign game functionality
 var buttons = document.getElementsByClassName("button");
+
+//for flagging whether the game has already been won, and trigger for a draw
 var alreadyCalled = false;
-var drawCount = 0;
+var drawCount = 0; //ticking up to 9 will signify a draw
+
+//advanced section
 var player1wins = 0;
 var player2wins = 0;
 
-document.getElementById('newGame').addEventListener('click', function() {
-	window.location.reload();
-})
+
 
 //NOTE: I played around with this forever knowing the logic and code was correct
 //but with zero results. This is because I put the script section in the html above
@@ -54,7 +56,7 @@ for (const button of buttons) {
 	 	playerSwitch();
 	 	checkWin();
 	 	checkDraw();
-	 }
+}
 
 	 setTimeout(function() {
 	  	if (gameover && !alreadyCalled) {
@@ -76,6 +78,28 @@ var board = [
 			[null, null, null],
 			[null, null, null],
 			];
+
+//for restarting game
+document.getElementById('newGame').addEventListener('click', function() {
+	
+	board = [
+			[null, null, null],
+			[null, null, null],
+			[null, null, null],
+			];
+
+	//iterate over buttons to reset all input
+
+	for (const button of buttons) {
+		button.innerHTML = '';
+	}
+
+	gameover = false
+	alreadyCalled = false;
+	drawCount = 0;
+
+});
+
 
 //gamewin check functions
 function checkRowWin() {
@@ -112,7 +136,7 @@ function checkWin() {
 	 		alert('Gameover man, it\'s game over!!');
 	 		alreadyCalled = true;
 	 	}
-	 }, 50);
+	 }, 15);
 }
 
 function checkDraw() {
@@ -121,7 +145,7 @@ function checkDraw() {
 	 		alert('It\'s a trap!! I mean, a draw!');
 	 		alreadyCalled = true;
 	 	}
-	 }, 60);
+	 }, 20);
 }
 
 function playerSwitch() {
