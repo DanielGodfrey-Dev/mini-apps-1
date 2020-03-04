@@ -11,18 +11,22 @@
 <body>
 <h1>this is gonna be our report area!</h1>
 
-<form action="/upload" method="post" class="form-example">
+
+<!--form entry not working for some reason :( -->
+
+<form method='post' action='/upload' class="form-example">
 <div class="form-example">
 	<label for='data'>Enter the D4T4 <<-->>   </label>
-	<input type='data' id='data' required>
+	<textarea id="JSONdata" rows="4" cols="50">
+	</textarea>
 </div>
+
+
 <p></p>
 <div class='form-example'>
 	<input type='submit' value='gyrosynchronate the data'>
 </div>
 </form>
-
-
 
 
 <script src='./app.js'></script>
