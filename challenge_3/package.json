@@ -1,0 +1,28 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "Check0ut!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielGodfrey-Dev/hrsf126-mini-apps-1/tree/master/challenge_3"
+  },
+  "keywords": [
+    "Checkout",
+    "React",
+    "Express"
+  ],
+  "author": "DanielGodfrey-Dev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
