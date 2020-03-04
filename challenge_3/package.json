@@ -4,7 +4,8 @@
   "description": "Check0ut!",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "./node_modules/.bin/babel --watch client --out-dir public --presets=@babel/preset-react --source-maps inline "
   },
   "repository": {
     "type": "git",
@@ -18,14 +19,14 @@
   "author": "DanielGodfrey-Dev",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
     "express": "^4.17.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "babel-preset-react": "^6.24.1",
     "nodemon": "^2.0.2"
   }
 }
